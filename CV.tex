@@ -1,0 +1,244 @@
+%-------------------------
+% Resume in Latex
+% Author : Alexander Reisach
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{todonotes}
+\usepackage{fancyhdr}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot{} % clear all footer fields
+\fancyfoot[L]{\textcolor{darkgray}{\today}}
+\fancyfoot[R]{\textcolor{darkgray}{Jon Doe}}
+\fancyfoot[C]{\textcolor{darkgray}{\thepage}}
+\usepackage[right=.9in, left=.9in, top=1in, bottom=1in, footskip=0.5in]{geometry}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% aligned label columns
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash\hspace{0pt}}p{#1}}
+
+\titleformat{\section}{
+  \vspace{2pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-2pt}]
+
+\titleformat{\subsection}{
+  \vspace{2pt}\scshape\raggedright\normalsize
+}{}{0em}{}[\color{black} \vspace{-2pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\Item}[1]{
+  \item\small{
+    {#1 \vspace{-0pt}}
+  }
+}
+\newcommand{\Subheading}[4]{
+  \vspace{1pt}\item
+    \begin{tabularx}{\textwidth}[t]{p{.79\linewidth} R{.21\linewidth}}
+      \textbf{#1} & #2
+    \end{tabularx}
+    \SubTable{#3}{#4}\vspace{-5pt}
+}
+
+\newcommand{\SubTable}[2]{
+    \begin{tabularx}{\textwidth}[t]{p{.76\linewidth} R{.24\linewidth}}
+        \small{\textcolor{darkgray}{#2}} & \textcolor{MidnightBlue}{\small #1} \\
+    \end{tabularx}
+}
+\newcommand{\PaperHeading}[3]{
+    \item
+    \begin{tabularx}{\textwidth}{@{}X@{\hspace{2em}} R{6em}}
+      \small\textbf{#1} $|$ \emph{#2} & #3 \\
+    \end{tabularx}
+}
+\newcommand{\ProjectHeading}[3]{
+    \item
+    \begin{tabularx}{\textwidth}{p{.8\linewidth} R{.2\linewidth}}
+      \small\textbf{#1} $|$ \emph{#2} & #3 \\
+    \end{tabularx}\vspace{-5pt}
+}
+\newcommand{\skillLine}[2]{\textbf{#1} $|$ #2\\\smallskip}
+\newcommand{\SubItem}[1]{\Item{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\SubHeadingListStart}{\begin{itemize}[
+    leftmargin=0in, label={}]}
+\newcommand{\SubHeadingListEnd}{\end{itemize}}
+\newcommand{\ItemListStart}{\begin{itemize}}
+\newcommand{\ItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\hreff}[2]{\textcolor{blue}{\href{#1}{#2}}}
+
+
+
+\begin{document}
+
+%----------HEADING----------
+% $|$ +45 91643249
+% Rue de l'Abb\'e Groult 42 B, 75015 Paris, France
+% Geranienweg 5a, 85598 Baldham, Germany
+
+\begin{center}
+    \textbf{\Huge \scshape Jon Doe} \\ \vspace{10pt}
+    \small Cul de sac avenue $|$ \hreff{mailto:jon.doe@gmail.com}{jon.doe@gmail.com} $|$ 
+    \hreff{https://github.com/ThisMe}{github.com/ThisMe}
+\end{center}
+
+\section{Research Topics}
+\begin{center}
+    \large
+    The human condition
+\end{center}
+% \vspace{5pt}
+
+%-----------Education-----------
+
+\section{Current Position}
+\SubHeadingListStart
+    \Subheading
+        {10x Engineer, Sick School – Cool Lab}{Jan. 3004 -- present}{
+            \hspace*{\fill}Cool Lab,\newline
+            \hspace*{\fill}Sick School\newline
+            \hspace*{\fill}Boomtown, Atlantis
+        }{
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit \newline\textit{Supervised by Prof. Dolittle (Sick School).}
+        }
+\SubHeadingListEnd
+
+\section{Education}
+    \SubHeadingListStart
+        \Subheading{10x Engineer, Sick School – Cool Lab}{Jan. 3001 -- Nov 3003}{Boomtown, Atlantis}{
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            \newline\textit{Supervised by Prof. Dolittle (Sick School).}
+        }     
+  \SubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+        \skillLine{Languages}{Elvish, Klingonian (native)}
+        \skillLine{Programming}{Kobol, x64 Assembly}
+        \skillLine{Other Tools}{Soldering iron}
+    }}
+ \end{itemize}
+
+
+%-----------EXPERIENCE-----------
+\section{Research Experience}
+    \SubHeadingListStart
+        \Subheading
+        {Re-Inventing the Wheel but with Blockchain}
+        {Feb. 2988 -- Sep. 3000}{
+            \hspace*{\fill}Fly Group\newline
+            \hspace*{\fill}SOTA Research Center\newline   
+            \hspace*{\fill}Boomtown, Atlantis\newline
+        }
+        {
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            \newline\textit{Supervised by Prof. Dolittle (Sick School)}
+        }        
+    \SubHeadingListEnd
+        
+\section{Industry Experience}
+    \SubHeadingListStart
+        \Subheading{Selling Towels to Customers That Need Umbrellas}
+        {Jan. 2978 -- Dec. 2981}{El Dorado, The Americas}{
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        }
+    \SubHeadingListEnd
+
+
+\section{Teaching Experience}
+    \SubHeadingListStart
+        \Subheading{Teaching Assistant, Hot-shit University}{Oct. 3910 -- Jul. 3920}{Wakanda, Africa}
+        {
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        }
+    \SubHeadingListEnd
+
+%-----------Publications-----------
+\section{Publications and Outreach}
+    \subsection*{Papers}
+    \SubHeadingListStart
+        \PaperHeading
+        {\hreff{https://buymybitcoin.com}{Monetary Spiritualism and the Blockchain}}
+            {Conference on Mindful Finance (ConMF)}{3002}            
+        \SubTable{}{
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        }
+    \SubHeadingListEnd
+
+    \subsection*{Presentations}
+    \SubHeadingListStart
+        \ProjectHeading
+            {Benchmarking Belief Systems}{Presentation at the prennial seminar of modern Theology}{2021}
+    \SubHeadingListEnd
+
+    \subsection*{Seminars}
+    \SubHeadingListStart
+        \ProjectHeading{Member of \hreff{https://findjesus.com/}{The Freemasons}}{Bi-centurial seminar on world affairs}{2022}
+    \SubHeadingListEnd
+
+    \subsection*{Reviewing}
+    \SubHeadingListStart
+        \ProjectHeading{\hreff{https:noscamtrustme.com}{Reviewer} for the Quarterly Review on Self-Deception and Predatory Publishing}{Milking The Altruists - A new perspective on open source software}{1021-1022}
+    \SubHeadingListEnd
+
+
+%-----------Fellowships, Honors and Awards-----------
+\section{Fellowships, Honors, and Awards}
+    \SubHeadingListStart
+      \ProjectHeading{Department of Computational Theology}{Dean's dog's chief chef}{3001}
+    \SubHeadingListEnd
+    
+
+\section{Extracurricular Activities}
+    \SubHeadingListStart
+        \ProjectHeading
+            {Others}{Bunga Bunga Parteys}{1970 -- 1980}
+    \SubHeadingListEnd
+
+    
+\end{document}
